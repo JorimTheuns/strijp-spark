@@ -14,9 +14,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header title="Welkom bij" />
+        <Header title="Welkom bij Strijp Spark" />
         <p className="description">
           Deze website is nog even onder constructie.
+        </p>
+        <p className="disclaimer">
+          Toch in contact komen? Stuur een email naar <a href="mailto:strijp.spark@gmail.com" target="_blank">strijp.spark@gmail.com</a>
         </p>
       </main>
 
