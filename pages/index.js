@@ -11,9 +11,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
+        <Header title="Welkom bij Strijp Spark" />
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          Deze website is nog even onder constructie.
         </p>
       </main>
 
