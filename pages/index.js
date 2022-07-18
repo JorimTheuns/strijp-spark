@@ -7,10 +7,6 @@ export default function Home() {
     <div className="flex flex-col items-center h-screen">
       <Head>
         <title>Strijp Spark</title>
-        <link rel="icon" href="/favicon.ico" />
-        <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-        </style> 
       </Head>
 
       <main className="flex flex-col items-center mx-auto my-auto space-y-4 max-w-lg text-center">
