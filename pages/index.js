@@ -1,5 +1,6 @@
 import Head from "next/head";
 import CenterHeader from "@components/Center-Header";
+import StripHeader from "@components/StripHeader";
 import Footer from "@components/Footer";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Strijp Spark</title>
       </Head>
-
+      <StripHeader title="Welkom bij Strijp Spark" />
       <main className="flex flex-col items-center mx-auto my-auto space-y-4 max-w-lg text-center p-1">
         <CenterHeader title="Welkom bij Strijp Spark" />
         <p className=" text-lg">Deze website is nog even onder constructie.</p>
