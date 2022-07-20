@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Peer test - report</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8fc24c50-c9c0-4034-92b3-e8c8dcadf0fc" class="page sans"><header><img class="page-cover-image" src="Peer-test-images/DSC_0313.jpg" style="object-position:center 65.27000000000001%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Peer-test-images/COSIGN_Vault_Icon.png"/></div><h1 class="page-title">Peer test - report</h1></header><div class="page-body"><ul id="a3c5e8b8-cb04-4659-a751-9f8a75bccd3f" class="toggle"><li><details open=""><summary><strong>Contents</strong></summary><nav id="e4a27732-9f00-4690-b834-d55ef57a36a5" class="block-color-blue table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5c984683-7c06-456a-acb2-48594761b54a">Thank you!</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0f2aecb1-8acc-4fe4-9117-499e7e6a4379">Recap: what was the point?</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c91d8655-8ab9-458e-bbef-7e3d0a7cf39c">General Results</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7eb82de5-6b93-4401-b4f0-2977e9e76c61">Group dynamics</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fe5ae21c-9bc3-40af-8c5f-95f35052d7c4">Prompt structure</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1911180c-a3bc-4e9c-8d9f-e31870d717a5">Emergent conversation</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8f99bc9b-0dcc-45b8-9331-e3d9d6e179e2">Themes</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#4fbc050d-3578-4675-8a24-6f0cb97dc001">Most common theme</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a9ad5f86-24f8-4153-9f95-5eb1079cbd8c">Most uncontroversial prompt</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#2031dca3-df65-49c5-be3c-c3912213ba87">Most controversial</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#2c10acac-27cf-4b73-8fab-6481905c6a5e">Biggest struggle</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#17095e3f-4130-4307-a3dd-e3cafd6961ce">Explore the map!</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#65465701-d557-46dd-bdb2-a42aa50e2562">What now?</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#225734ca-b098-47a1-906e-2e2061610e5b">Information processing</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8500394d-2670-4226-a33b-219dcb5498f3">Room for improvement</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#78155450-aa2f-4b65-8190-f6dd4a8d918c">Approach</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0b1a2e27-7cfb-44e9-b5cd-7377e527eb7f">Emergent conversation</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8ea475c9-8d02-4a55-8555-f4abe54a3b3c">Room for improvement</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#bab17b63-c8f2-41bc-ad98-cb2da2dafdb4">Approach</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#df5068c3-0b88-425f-8610-9a62375519fd">Wayfinding</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f8a56390-338f-4b34-826a-4b8cd6d5adc9">Room for improvement</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#da503426-0c40-4532-b847-5d60469b3af8">Approach</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a4f63d51-4d67-4342-90b5-8cf83fe48fa0">Wrap up</a></div></nav></details></li></ul><hr id="aa8992f9-cbe2-4ddc-ab61-9e8aff0be4a1"/><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="f0e9be90-f33e-4ece-be65-1954cdb34903"><div style="font-size:1.5em"><span class="icon">🇳🇱</span></div><div style="width:100%">Hi, met Jor! Ik probeer voor mijzelf wat tijd te besparen, maar als je dit liever in het Nederlands wil lezen, stuur mij even een berichtje en dat vertaal ik het graag voor je.</div></figure><h1 id="5c984683-7c06-456a-acb2-48594761b54a" class="">Thank you!</h1><p id="4e52fcb7-9fa5-48aa-a046-9bbf9b780daf" class="">To all the lovely people who attended the Peer Test on June 29th, thank you so much for participating! It was an excellent opportunity to put some of our ideas into action. We have learned a lot about how we can host the next session to be even better.</p><h1 id="0f2aecb1-8acc-4fe4-9117-499e7e6a4379" class="">Recap: what was the point?</h1><p id="23653589-2cf0-4450-9599-c5a672878853" class="">As we mentioned on the day, when it comes to big topics and opportunities for change, more brains are better than fewer. The obstacle you run into is communication. How can you facilitate the organisation and communication between these brains constructively?</p><p id="4c709eb4-38de-47ff-93f1-1d6711de3674" class=""><strong>We noticed that traditional methods for brainstorming in a large group weren’t harnessing the full potential of the crowd.</strong> Often, organisers split the public into large sub-groups and give them a single problem statement that they must tackle together. After coming up with their solution, the sub-groups pitch their idea to the whole crowd. The most popular ideas are the “winners.” Though this method can be effective, there are a lot of problems with it.</p><p id="3448bf4c-a4a5-41af-8fdd-fcc8ff238115" class=""><strong>We devised a different way of brainstorming in a large group.</strong> Instead of wicked problems demanding complete ideas that would compete for victory, we thought it would be worth trying small groups with bite-sized prompts. These prompts could be exchanged between groups to facilitate a more extensive, emergent conversation. </p><p id="794aac56-3c2b-4a2d-be39-93ac9684c243" class=""><strong>You were the guinea pigs for our first experiment!</strong> In the next section, you can see the general results of the session. If you would like, we can send a personalised report of how your inputs impacted the discussion.</p><h1 id="c91d8655-8ab9-458e-bbef-7e3d0a7cf39c" class="">General Results</h1><p id="17ffc2ee-2bd7-441e-826c-f758ee94312d" class="">We were testing a number of things during the day. Specifically group dynamics, prompt structure and the quality of the emergent conversation.</p><h2 id="7eb82de5-6b93-4401-b4f0-2977e9e76c61" class="">Group dynamics</h2><p id="c7fc680c-23ac-47a0-ac78-9b6904f7effb" class="">Many of you pointed out that the smaller groups were easier to manage, and that shuffling the groups lead to a nice variety of conversation. We noticed that each group had a very specific flavour informed by its members. Some groups were highly productive, others less so, but they has deep and sometimes difficult conversations.</p><h2 id="fe5ae21c-9bc3-40af-8c5f-95f35052d7c4" class="">Prompt structure</h2><p id="0cd27f49-b6c0-4477-be54-19b892e46a32" class="">We tested three kinds of prompts on the day: Anecdotes, Statements and Questions. We noticed that statements and questions lead to the most dynamic conversations and that groups cared more about the quality of the conversation than the quality of the prompt itself. In this way, anecdotes were not effective in promoting active discussion as they seemed to close off the discussion rather than open it up.</p><h2 id="1911180c-a3bc-4e9c-8d9f-e31870d717a5" class="">Emergent conversation</h2><h3 id="8f99bc9b-0dcc-45b8-9331-e3d9d6e179e2" class="">Themes</h3><p id="8b78e6d5-9e80-40c3-b920-c1cfc16188bb" class="">We identified 7 themes in our analysis.</p><ul id="b6dce14c-6536-4e0d-9b6f-9f963bc089fd" class="block-color-teal bulleted-list"><li style="list-style-type:disc">Benefits of community organising</li></ul><ul id="76b7ea55-0472-4f4e-821c-eb3224b601c8" class="block-color-red bulleted-list"><li style="list-style-type:disc">Drawbacks of community organising</li></ul><ul id="03eb48d7-bb58-426f-91bd-702d3d4d692c" class="block-color-orange bulleted-list"><li style="list-style-type:disc">How-to, tips &amp; advice</li></ul><ul id="b2decb63-6c68-4de4-a791-b1476a7ba212" class="bulleted-list"><li style="list-style-type:disc">No discussion</li></ul><ul id="0f6c944a-e3fe-4b1b-8f79-16d818615c5c" class="block-color-blue bulleted-list"><li style="list-style-type:disc">Controversial</li></ul><ul id="28497384-82e2-4cbb-b56e-2ab2e289aa55" class="block-color-purple bulleted-list"><li style="list-style-type:disc">Inclusivity</li></ul><ul id="021a402b-c981-4d40-84c7-a12f31cb29be" class="block-color-gray bulleted-list"><li style="list-style-type:disc">Technology</li></ul><h3 id="4fbc050d-3578-4675-8a24-6f0cb97dc001" class="">Most common theme</h3><p id="e84d27d2-aa8b-4a92-85d1-42a31c1b9479" class="">The vast majority of discussions were about how one might best organise a community, under the “How-to, tips &amp; advice” theme. It seems that people are great at giving advice to strangers, who knew? 😉</p><h3 id="a9ad5f86-24f8-4153-9f95-5eb1079cbd8c" class="">Most uncontroversial prompt</h3><p id="f9988488-f407-4b39-b596-6eb070665852" class="">The most uncontroversial statement was about the benefits of community organising. This was “liked” by three groups, but all groups noted that the discussion went nowhere because there was no “problem” to unpack. </p><div id="97a99c7e-d31a-4cd4-8f3a-90cae4ab03a4" class="column-list"><div id="62da5fdc-446e-4737-a5cd-2aae5b7dc081" style="width:50%" class="column"><figure id="06902de2-5589-4f89-a08c-7ce0049d9a2a" class="image"><a href="Peer-test-images/CosignWorkshop(6).jpg"><img style="width:1081px" src="Peer-test-images/CosignWorkshop(6).jpg"/></a><figcaption>Collective bargaining</figcaption></figure></div><div id="40f44318-5bb4-4655-a1c3-d5553996bf05" style="width:50%" class="column"><blockquote id="382d8b41-fec6-4efe-94a4-e04c88f81809" class=""><em><strong>55. Organising a community has many benefits!
+</strong></em><em>During my student time, I organised various activities with the student athletics association. That was (1) very enjoyable, (2) a good way to get to know people even better, (3) instructive and (4) a way to keep it affordable for all members by organising everything ourselves.</em></blockquote></div></div><h3 id="2031dca3-df65-49c5-be3c-c3912213ba87" class="">Most controversial</h3><p id="0e73acb2-4c25-4ffc-b492-9dec4a047867" class=""><strong>Newcomers</strong></p><p id="9376213a-8e64-41f7-8117-67b84f6db628" class="">The most controversial discussion was centred on prompt 33: Communities must be open to newcomers. The discussion gravitated towards the idea that communities should be open enough to find new members and closed enough to retain a unique identity.</p><div id="dbbe589d-3154-49d3-ba33-060a86a9a635" class="column-list"><div id="bec6eb24-55b4-4a6c-8b38-80667e6ed425" style="width:50.000000000000014%" class="column"><blockquote id="d7f30483-6578-4732-bcf3-e082ae74b37b" class=""><em><strong>33. Communities must be open to newcomers</strong></em><p id="135b2f5a-860a-4b00-aea3-aa19be67e620" class=""><em>Communities must always be open to people that are new and never look down on those who join later or for different reasons.</em></p></blockquote></div><div id="bb64b6ab-df0e-4962-81aa-c184793ba523" style="width:50%" class="column"><figure id="721e0e55-67a2-4ebd-b2ad-c75d2a342e6b" class="image"><a href="Peer-test-images/CosignWorkshop(7).jpg"><img style="width:1082px" src="Peer-test-images/CosignWorkshop(7).jpg"/></a><figcaption>A warm welcome</figcaption></figure></div></div><p id="8622105d-5343-4cec-9c39-8407af26e75e" class=""><strong>Democracy</strong></p><p id="48a08b4a-11a8-49ed-b116-a51500ec1447" class="">Another controversy was whether democratic decision-making was a universal good or an optional feature. Post 82 sums it up nicely.</p><div id="1a8e7fb4-3259-45ec-854d-ef86e14fc359" class="column-list"><div id="0e8905b1-4fb4-4deb-9a4d-e01dd0a22ed8" style="width:50%" class="column"><figure id="e39d8ead-daf5-4ab5-b126-4702932934a9" class="image"><a href="Peer-test-images/CosignWorkshop(10).jpg"><img style="width:1080px" src="Peer-test-images/CosignWorkshop(10).jpg"/></a><figcaption>The captain and the crowd</figcaption></figure></div><div id="0528e639-3c4b-4a10-b616-793a30684a11" style="width:50%" class="column"><blockquote id="45402f31-1742-46fd-9710-f1d7d0b6c204" class=""><em><strong>82. No democracy by force</strong></em>
+<em>Most of the time yes, need to have some degree of transparency and democratisation - need to have an opt in. Advantage of non-democratic communities that are transparent is quick decision making, but not everyone has a say in it.</em></blockquote></div></div><h3 id="2c10acac-27cf-4b73-8fab-6481905c6a5e" class="">Biggest struggle</h3><p id="374998d5-293d-4456-a0c3-176c18c80bec" class=""><strong>Herding cats</strong></p><p id="d8194d76-0a4d-4117-9fc7-24a04ae2fd2e" class="">The prompt under the theme “difficulties &amp; drawbacks” that received the most likes was #47.</p><div id="1170ebf7-0185-481e-9b40-66434bb83a4a" class="column-list"><div id="47c4fbd6-a1c1-4b72-afd4-091a07ca4471" style="width:50%" class="column"><blockquote id="0b7980c6-1fe6-4d3c-b0f1-a37d000faff9" class=""><em><strong>47. Herding Cats</strong></em><em>
+Community organising can often feel like “herding cats”. Getting a large group to agree on an activity and specifically a time and a place is almost impossible without serious (often one-sided) effort.</em></blockquote><p id="cd7be66f-5c03-4ec5-8b0b-216c1c1f107a" class="">The advice, to paraphrase, was to hold things lightly (don’t get your whiskers in a twist) and to look for other leaders to help share the burden.</p></div><div id="d10e2d6b-2f6d-4a09-971c-7e99de59ccf6" style="width:50%" class="column"><figure id="64f529d5-6169-40fd-a1ca-8df96ae7764f" class="image"><a href="Peer-test-images/CosignWorkshop(8).jpg"><img style="width:1082px" src="Peer-test-images/CosignWorkshop(8).jpg"/></a><figcaption>Fickle felines</figcaption></figure></div></div><p id="5ee5fc80-df2f-4e31-a01f-b9fb9779ca66" class=""><strong>What to do with troublemakers?</strong></p><p id="cec1d58d-fd0a-45b6-a110-ca16d6e49c49" class="">Another struggle that led to discussion emerged from prompt 17. How can you deal with troublemakers? The responses were both light-hearted and thoughtful.</p><div id="cbcfc594-071a-4410-b240-0e643bc8b630" class="column-list"><div id="0824d853-4d27-4442-9090-5c6dd549ce49" style="width:50%" class="column"><figure id="f12956ea-55ba-46b6-93bd-b5b7640b633d" class="image"><a href="Peer-test-images/CosignWorkshop(9).jpg"><img style="width:1019px" src="Peer-test-images/CosignWorkshop(9).jpg"/></a><figcaption>First, send them to prison.</figcaption></figure></div><div id="9a54a734-9299-44b3-9d12-b17b181a6641" style="width:50%" class="column"><blockquote id="7284ec00-d8ee-4dd2-a665-aefddb9ff3e8" class=""><em><strong>71. Send them to prison
+</strong></em><em>1.</em><em><strong> </strong></em><em>First be patient, try to have constructive dialogue. If the rules keep being stepped on, proceed to: 
+2. Have hard limits, be strict in those, stand by those limits at all times. 
+3. Send them to prison.</em></blockquote></div></div><h3 id="17095e3f-4130-4307-a3dd-e3cafd6961ce" class="">Explore the map!</h3><p id="fe53e223-94da-4215-9523-2b435495f8c5" class="">Feel free to explore the full conversation using the Figma diagram below. Happy exploring!</p><p id="1312b943-30f1-4bef-96da-612b4c66f639" class="">
+</p><figure id="de5e0b97-f58e-41bb-b4f4-779f5cd66228"><div class="source"><a href="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FfwJ84oKDJBfv0h2BgoJWkx%2FPeer-test-diagram%3Fnode-id%3D0%253A1">https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FfwJ84oKDJBfv0h2BgoJWkx%2FPeer-test-diagram%3Fnode-id%3D0%253A1</a></div></figure><figure class="block-color-gray callout" style="white-space:pre-wrap;display:flex" id="854d7ccf-bd61-4b24-806c-b9e005977d0f"><div style="font-size:1.5em"><span class="icon">🤖</span></div><div style="width:100%">For more data-inclined folks among us, feel free to reach out and we would be happy to provide are more complete dataset.</div></figure><h1 id="65465701-d557-46dd-bdb2-a42aa50e2562" class="">What now?</h1><p id="45b9113d-ec0f-4df6-9664-7df76f3ece9f" class="">Now we will get to work improving the workshop! We anticipated that there would be problems, and stress testing the method pointed out specific areas for improvement. There are many things to unpack here, so let&#x27;s break it down. </p><h2 id="225734ca-b098-47a1-906e-2e2061610e5b" class="">Information processing</h2><h3 id="8500394d-2670-4226-a33b-219dcb5498f3" class="">Room for improvement</h3><ol type="1" id="7b427bfe-2825-4430-99af-d76909888c8a" class="numbered-list" start="1"><li>Some groups received a prompt that someone in the group had already worked on. That was not the intention! </li></ol><ol type="1" id="2fc0fbbd-ab3b-43d7-a533-14fa161e9cd4" class="numbered-list" start="2"><li>The handwriting was sometimes hard to read which made transcription difficult.</li></ol><ol type="1" id="e37f27c3-66ba-4fb5-b1b5-425aeadc2c20" class="numbered-list" start="3"><li>The live translation was difficult due to the need to transcribe handwriting before the first pass of machine translation.</li></ol><h3 id="78155450-aa2f-4b65-8190-f6dd4a8d918c" class="">Approach</h3><p id="65a21b0b-9ea1-4a8b-9094-77d0f3947b4f" class="">We liked that groups were able to work on pen and paper to brainstorm and sketch, but the submission of prompts could also be done “digital first”. This would solve the problems mentioned above. In the next test, we will try to facilitate the communication between the archivist and the groups using a digital tool, probably WhatsApp until we find/build a better alternative.</p><h2 id="0b1a2e27-7cfb-44e9-b5cd-7377e527eb7f" class="">Emergent conversation</h2><h3 id="8ea475c9-8d02-4a55-8555-f4abe54a3b3c" class="">Room for improvement</h3><ol type="1" id="0cd17343-f7ea-472d-9b0b-6301b1ab599b" class="numbered-list" start="1"><li>We didn’t want to run out of prompts during the discussion, so we actually collected too many prompts before the session then we could use in the end. This, combined with the slow information processing made the emergent conversation rather “flat” - we were able to address many prompts, but the deepest conversation only went “back and forth” three times.</li></ol><ol type="1" id="07d1eac7-83fc-4502-a784-d2913275c707" class="numbered-list" start="2"><li>As mentioned previously, the anecdotes seemed to close down the discussion rather than open it up.</li></ol><h3 id="bab17b63-c8f2-41bc-ad98-cb2da2dafdb4" class="">Approach</h3><p id="246fc639-cd4b-4a81-ae88-97275a2ba38f" class="">Next time, we will collect fewer prompts so that the focus quickly shifts to content generated <strong>during the workshop. </strong>This should lead to a deeper conversation with more twists and turns. In the future, we will also limit prompts to statements and questions.</p><h2 id="df5068c3-0b88-425f-8610-9a62375519fd" class="">Wayfinding</h2><h3 id="f8a56390-338f-4b34-826a-4b8cd6d5adc9" class="">Room for improvement</h3><ol type="1" id="b3ba14ac-320e-41b9-81ea-4cc6ee304687" class="numbered-list" start="1"><li>We heard from a few people that the location was hard to find.</li></ol><ol type="1" id="2de78a54-62b5-49ac-89db-99953e9a63df" class="numbered-list" start="2"><li>Many people had to ask where the toilet was etc.</li></ol><h3 id="da503426-0c40-4532-b847-5d60469b3af8" class="">Approach</h3><p id="6e31d787-eefc-42b1-9d34-7cace7d26ec1" class="">We will spend more effort on adding signs and step-by-step instructions on how to reach the site.</p><h1 id="a4f63d51-4d67-4342-90b5-8cf83fe48fa0" class="">Wrap up</h1><div id="460580c9-1ba9-497f-8db9-853b694ee663" class="column-list"><div id="b4d8a65d-ada0-4172-96f0-f0bc906a5f9a" style="width:50%" class="column"><p id="537e2c25-4bde-423c-beae-810163bbb77e" class="">You made it to the bottom, <strong>thanks for showing so much interest!</strong> If you would like to be involved with further developments, such as volunteering at our much larger event in September, please send an email to <a href="mailto:strijp.spark@gmail.com">strijp.spark@gmail.com</a> with some details on what you would like to contribute. 🙂</p><p id="d50f4001-4131-48bc-9a63-dce58a78d10e" class="">
+</p><p id="3f497d0d-d57f-4c09-a969-28d6cc887787" class="">From Eve and Jor: <strong>Thank you! ✨</strong></p><p id="941ab28c-912f-4095-a953-0f08a863cb7e" class="">
+</p></div><div id="a10e049a-f205-4224-bd82-c4d09928bae1" style="width:50%" class="column"><figure id="46ab83b2-bc26-49bb-8ab2-d0c7acbff05b" class="image"><a href="Peer-test-images/CosignWorkshop(11).jpg"><img style="width:1023px" src="Peer-test-images/CosignWorkshop(11).jpg"/></a></figure><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="b3c6aed1-c64f-4e07-bca6-dd4157998803"><div style="font-size:1.5em"><span class="icon">🔥</span></div><div style="width:100%">Shoutout to the wonderful <a href="http://hugopilate.com/">Hugo Pilate</a>, who made the wacky images inspired by the media references you provided.</div></figure></div></div><p id="7c791759-192d-488a-ad3d-2feeb57250c3" class="">
+</p><p id="3fdce972-0d96-4221-8401-e6eaa8b61bdf" class="">
+</p></div></article></body></html>
