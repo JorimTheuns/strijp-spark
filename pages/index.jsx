@@ -5,13 +5,12 @@ import Footer from "@components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center h-screen p-1">
+    <div className="flex flex-col items-center h-full p-1">
       <Head>
         <title>Strijp Spark</title>
       </Head>
       <StripHeader title="Welkom bij Strijp Spark" />
-      <main className="flex flex-col items-center mx-auto my-auto space-y-4 max-w-lg text-center p-1">
-        <CenterHeader title="Welkom bij Strijp Spark" />
+      <main className="flex flex-col space-y-4 text-center p-1 h-full">
         <p className=" text-lg">Deze website is nog even onder constructie.</p>
         <p className="">
           Toch in contact komen? Stuur een email naar{" "}
