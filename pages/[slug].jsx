@@ -1,6 +1,9 @@
+import StaticWreathHeader from "@components/StaticWreathHeader";
+import StaticWreathFooter from "@components/StaticWreathFooter";
 import { NotionRenderer } from "react-notion";
 
 import { getAllPosts } from "./blog";
+import AuthorCard from "@components/authorCard";
 
 export async function getStaticProps({ params: { slug } }) {
   // Get all posts again
@@ -22,9 +25,17 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export default ({ post, blocks }) => (
-  <div className="p-4 mx-auto max-w-[1000px]">
-    <h1>{post.title}</h1>
-    <NotionRenderer blockMap={blocks} />
+  <div className="">
+    <StaticWreathHeader></StaticWreathHeader>
+    <div className="p-4 mx-auto max-w-[1000px]">
+      <p className="notion-h1">{post.title}</p>
+      <p className="notion-h1">{post.date}</p>
+      <AuthorCard authors={post.Author}></AuthorCard>
+    </div>
+    <div className="p-4 mx-auto max-w-[1000px]">
+      <NotionRenderer blockMap={blocks} />
+    </div>
+    <StaticWreathFooter></StaticWreathFooter>
   </div>
 );
 
@@ -34,4 +45,10 @@ export async function getStaticPaths() {
     paths: posts.map((row) => `/${row.slug}`),
     fallback: false,
   };
+}
+
+function getDate(timeStamp) {
+  const d = new Date(timeStamp);
+  let text = d.toString();
+  return text;
 }

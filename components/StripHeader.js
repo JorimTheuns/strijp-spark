@@ -1,4 +1,4 @@
-export default function StripHeader({ title }) {
+export default function StripHeader({ title, image }) {
   return (
     <div className="max-h-full w-screen flex flex-col flex-nowrap py-6 justify-center align-middle space-y-6">
       <img
