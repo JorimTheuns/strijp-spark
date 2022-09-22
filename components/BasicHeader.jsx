@@ -1,4 +1,4 @@
-import ScrollDown from "./scrollDown"
+import ScrollDown from "./ScrollDown"
 import Button from "./Button"
 
 export default function BasicHeader({ icon, title, subtitle }) {

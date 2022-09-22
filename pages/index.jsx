@@ -9,7 +9,7 @@ import Image from "next/image"
 import AnythingButton from "@components/AnythingButton"
 
 import { useInView } from "react-intersection-observer"
-import ScrollDown from "@components/scrollDown"
+import ScrollDown from "@components/ScrollDown"
 
 export default function Home() {
   const options = { triggerOnce: true }
