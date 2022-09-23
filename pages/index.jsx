@@ -30,12 +30,14 @@ export default function Home() {
       <Head>
         <title>Strijp Spark</title>
       </Head>
-      <BasicHeader
-        icon="/SSLogo.png"
-        title="Strijp-Spark"
-        subtitle="Brainstormen met heel Strijp-S, voor en door bewoners georganiseerd"
-      ></BasicHeader>
-      <section className="max-w-5xl p-4 pt-16 gap-8 grid lg:grid-cols-5 lg:auto-rows-min min-h-screen content-center">
+      <section className="max-w-5xl p-4 sm:min-h-screen">
+        <BasicHeader
+          icon="/SSLogo.png"
+          title="Strijp-Spark"
+          subtitle="Brainstormen met heel Strijp-S, voor en door bewoners georganiseerd."
+        ></BasicHeader>
+      </section>
+      <section className="max-w-5xl p-4 pt-16 gap-8 grid lg:grid-cols-5 lg:auto-rows-min sm:min-h-screen content-center">
         <div
           ref={ref1}
           className={`text-4xl lg:col-span-3 self-end leading-tight transition-opacity" ${
@@ -64,7 +66,7 @@ export default function Home() {
             <TextBox
               icon="📝"
               title="1. Doe mee!"
-              subtitle="Je kunt je aanmelden om mee te doen! We zullen willekeurig 100+ mensen selecteren voor de eerste sessie."
+              subtitle="Meld je aan om mee te doen! We zullen willekeurig 100+ mensen selecteren voor de eerste sessie."
             ></TextBox>
           </AnythingButton>
         </div>
@@ -77,7 +79,7 @@ export default function Home() {
           <TextBox
             icon="😃"
             title="2. Leuke gesprekken"
-            subtitle="Op de dag van het evenement organiseren we veel kleine gesprekken waar je moet samenwerken om te kunnen reageren en antwoorden op andere groepen."
+            subtitle="Tijdens het evenement zijn er veel kleine gesprekken waar je moet samenwerken om je idee met de grote groep te delen."
           ></TextBox>
         </div>
         <div
@@ -93,15 +95,16 @@ export default function Home() {
           ></TextBox>
         </div>
       </section>
-      <section className="min-w-[80vw] max-w-7xl p-4 pt-16 gap-8 grid lg:auto-rows-min content-center min-h-[80vh] grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
+      <section className="min-w-[80vw] max-w-7xl p-4 pt-16 gap-8 grid lg:auto-rows-min content-center sm:min-h-[80vh] grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
         <h1
           ref={ref5}
           className={`text-4xl self-end leading-tight text-center font-bold col-span-full ${
             inView5 ? "animate-slidein" : ""
           }`}
         >
-          Our partners
+          Onze partners
         </h1>
+
         <img
           ref={ref6}
           className={`place-self-center ${inView6 ? "animate-slidein" : ""}`}
@@ -138,8 +141,12 @@ export default function Home() {
           src="/woonbedrijf.jpg"
           alt="woonbedrijf"
         />
+        <p className="self-end leading-tight text-center font-bold col-span-full">
+          Ook partner worden? stuur een email aan{" "}
+          <a href="mailto:strijp.spark@gmail.com">strijp.spark@gmail.com</a>
+        </p>
       </section>
-      <section className="max-w-7xl p-4 pt-16 gap-8 grid md:grid-cols-2 min-h-[80vh] lg:auto-rows-min content-center">
+      <section className="max-w-7xl p-4 pt-16 gap-8 grid md:grid-cols-2 sm:min-h-[80vh] lg:auto-rows-min content-center">
         <h1 className="text-4xl self-end leading-tight text-center font-bold col-span-full">
           Evenement in een oogopslag
         </h1>
@@ -156,15 +163,15 @@ export default function Home() {
         <TextBox
           icon="🗓"
           title="Wanneer?"
-          subtitle="15:00 tot 19:00. 23 november 2022"
+          subtitle="19:00 tot 21:00. 24 november 2022"
         ></TextBox>
         <TextBox
           icon="📍"
           title="Waar?"
-          subtitle="Klokgebouw - Keukenconfessies"
+          subtitle="Een bijzondere locatie op Strijp-S - Meld je aan!"
         ></TextBox>
       </section>
-      <section className="max-w-7xl p-4 pt-16 gap-8 grid auto-cols-auto lg:grid-cols-3 min-h-[80vh] lg:auto-rows-min content-center">
+      <section className="max-w-7xl p-4 pt-16 gap-8 grid auto-cols-auto lg:grid-cols-3 sm:min-h-[80vh] lg:auto-rows-min content-center">
         <h1 className="text-4xl self-end leading-tight text-center font-bold col-span-full">
           Wie zoeken we?
         </h1>
