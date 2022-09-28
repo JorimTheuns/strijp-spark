@@ -9,10 +9,12 @@ import Image from "next/image"
 import AnythingButton from "@components/AnythingButton"
 
 import { useInView } from "react-intersection-observer"
+import Button from "@components/Button"
 import ScrollDown from "@components/ScrollDown"
 
 export default function Home() {
   const options = { triggerOnce: true }
+  const [ref0, inView0] = useInView(options)
   const [ref1, inView1] = useInView(options)
   const [ref2, inView2] = useInView(options)
   const [ref3, inView3] = useInView(options)
@@ -31,13 +33,64 @@ export default function Home() {
         <title>Strijp Spark</title>
       </Head>
       <section className="max-w-5xl p-4 sm:min-h-screen">
-        <BasicHeader
-          icon="/SSLogo.png"
-          title="Strijp-Spark"
-          subtitle="Brainstormen met heel Strijp-S, voor en door bewoners georganiseerd."
-        ></BasicHeader>
+        <div className="grid md:grid-cols-icon grid-rows-section justify-items-center gap-8 h-screen">
+          <img
+            ref={ref0}
+            src="/SSLogo.png"
+            alt="icon"
+            className={`h-[40vmin] w-[40vmin] self-end md:self-center md:justify-self-end  ${
+              inView0 ? "animate-slidein" : ""
+            }`}
+          />
+          <div className="grid self-start sm:grid-cols-3 md:self-center gap-4 max-w-md">
+            <h1 className="title text-5xl text-center sm:text-left font-bold self-end sm:col-span-3">
+              Strijp-Spark
+            </h1>
+            <h2 className="title text-2xl text-center sm:text-left font-bold sm:col-span-3">
+              Brainstormen met heel Strijp-S, voor en door bewoners
+              georganiseerd.
+            </h2>
+            <Button
+              dataTallyOpen="mD469R"
+              dataTallyLayout="modal"
+              dataTallyWidth="720"
+              dataTallyOverlay="1"
+              dataTallyEmojiText="📝"
+              dataTallyEmojiAnimation="heart-beat"
+              classes="bg-day-green"
+            >
+              Meld je aan
+            </Button>
+            <Button
+              dataTallyOpen="3ja4DR"
+              dataTallyLayout="modal"
+              dataTallyWidth="720"
+              dataTallyOverlay="1"
+              dataTallyEmojiText="🤝"
+              dataTallyEmojiAnimation="heart-beat"
+              className=""
+            >
+              Help mee
+            </Button>
+            <Button
+              dataTallyOpen="wQKlq7"
+              dataTallyLayout="modal"
+              dataTallyWidth="720"
+              dataTallyOverlay="1"
+              dataTallyEmojiText="☕️"
+              dataTallyEmojiAnimation="heart-beat"
+              className=""
+            >
+              Doneer
+            </Button>
+          </div>
+          <ScrollDown></ScrollDown>
+        </div>
       </section>
-      <section className="max-w-5xl p-4 pt-16 gap-8 grid lg:grid-cols-5 lg:auto-rows-min sm:min-h-screen content-center">
+      <section
+        id="Description"
+        className="max-w-5xl p-4 pt-16 gap-8 grid lg:grid-cols-5 lg:auto-rows-min sm:min-h-screen content-center"
+      >
         <div
           ref={ref1}
           className={`text-4xl lg:col-span-3 self-end leading-tight transition-opacity" ${
@@ -95,7 +148,32 @@ export default function Home() {
           ></TextBox>
         </div>
       </section>
-      <section className="min-w-[80vw] max-w-7xl p-4 pt-16 gap-8 grid lg:auto-rows-min content-center sm:min-h-[80vh] grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
+
+      <section className="max-w-5xl p-4 pt-16 gap-8 grid grid-cols-1 lg:auto-rows-min sm:min-h-screen content-center">
+        <div className="grid gap-8 md:grid-cols-2 items-center text-center md:text-right">
+          <h1 className="text-5xl font-bold self-end">Wie zijn wij?</h1>
+          <div className="relative row-span-2">
+            <img
+              className="border-4 border-blackish opacity-100 hover:opacity-0"
+              src="/Team photo.jpg"
+            ></img>
+            <img
+              className="border-4 border-blackish absolute translate-y-[-100%] opacity-0 hover:opacity-100"
+              src="/team silly.JPG"
+            ></img>
+          </div>
+
+          <p className="text-2xl self-start">
+            Hi! Wij zijn Jor en Eve, we wonen in Haasje Over, en we hebben
+            allebei een passie voor participatie. Jor is ontwerper bij een
+            start-up, en Eve doet haar afstudeer onderzoek aan de TU/e.
+          </p>
+        </div>
+      </section>
+      <section
+        id="Partners"
+        className="min-w-[80vw] max-w-7xl p-4 pt-16 gap-8 grid lg:auto-rows-min content-center sm:min-h-[80vh] grid-cols-2 md:grid-cols-3 lg:grid-cols-6 "
+      >
         <h1
           ref={ref5}
           className={`text-4xl self-end leading-tight text-center font-bold col-span-full ${
