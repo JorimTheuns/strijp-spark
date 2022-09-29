@@ -17,7 +17,7 @@ export default function AnythingButton({
       data-tally-emoji-text={dataTallyEmojiText}
       data-tally-emoji-animation={dataTallyEmojiAnimation}
       type="button"
-      className={` text-left hover:scale-105 focus:ring-2 ring-day-teal active:scale-95 transition-all duration-150 ease-in-out" ${classes}`}
+      className={` text-left shadow-lg hover:scale-105 focus:ring-2 ring-day-teal active:scale-95 transition-all duration-150 ease-in-out" ${classes}`}
     >
       {children}
     </button>
