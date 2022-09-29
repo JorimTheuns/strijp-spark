@@ -33,7 +33,7 @@ export default function Home() {
       <Head>
         <title>Strijp Spark</title>
       </Head>
-      <section className="max-w-5xl p-4 sm:min-h-screen">
+      <section className="max-w-5xl p-4 sm:min-h-screen pt-16 pb-16 sm:pt-4 sm:pb-4">
         <div className="grid md:grid-cols-icon grid-rows-section justify-items-center gap-8 sm:h-screen">
           <img
             ref={ref0}
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
       <section
         id="Description"
-        className="border-t-8 border-day-gray  w-screen"
+        className="border-t-8 border-day-gray  w-screen pt-16 pb-16 sm:pt-4 sm:pb-4"
       >
         <div className="max-w-5xl m-auto p-4 gap-8 grid lg:grid-cols-5 lg:auto-rows-min sm:min-h-screen content-center">
           <div
@@ -151,7 +151,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="border-t-8 border-day-gray w-screen">
+      <section className="border-t-8 border-day-gray w-screen pt-16 pb-16 sm:pt-4 sm:pb-4">
         <div className="max-w-5xl m-auto p-4 gap-8 grid grid-cols-1 lg:auto-rows-min  sm:min-h-[80vh] content-center">
           <div className="grid gap-8 md:grid-cols-2 items-center text-center md:text-right">
             <h1 className="text-5xl font-bold self-end">Wie zijn wij?</h1>
@@ -174,7 +174,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className=" border-t-8 border-day-gray w-screen">
+      <section className=" border-t-8 border-day-gray w-screen pt-16 pb-16 sm:pt-4 sm:pb-4">
         <div
           ref={ref5}
           id="Partners"
@@ -222,7 +222,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className=" border-day-gray w-screen bg-day-green">
+      <section className=" border-day-gray w-screen bg-day-green pt-16 pb-16 sm:pt-4 sm:pb-4">
         <div className=" max-w-7xl m-auto p-4 gap-8 grid md:grid-cols-2 sm:min-h-[80vh] lg:auto-rows-min content-center">
           <h1 className="text-4xl self-end leading-tight text-center font-bold col-span-full">
             Evenement in een oogopslag
@@ -258,13 +258,13 @@ export default function Home() {
             dataTallyOverlay="1"
             dataTallyEmojiText="📝"
             dataTallyEmojiAnimation="heart-beat"
-            classes="bg-white self-center col-span-2 w-48 m-auto"
+            classes="bg-white self-center md:col-span-2 w-48 m-auto"
           >
             Meld je aan
           </Button>
         </div>
       </section>
-      <section className=" border-day-gray  w-screen">
+      <section className=" border-day-gray w-screen pt-16 pb-16 sm:pt-4 sm:pb-4">
         <div className="max-w-7xl m-auto p-4 gap-8 grid auto-cols-auto lg:grid-cols-3 sm:min-h-[80vh] lg:auto-rows-min content-center">
           <h1 className="text-4xl self-end leading-tight text-center font-bold col-span-full">
             Wie zoeken we?
