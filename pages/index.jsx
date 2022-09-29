@@ -33,8 +33,8 @@ export default function Home() {
       <Head>
         <title>Strijp Spark</title>
       </Head>
-      <section className="max-w-5xl p-4 sm:min-h-screen pt-16 pb-16 sm:pt-4 sm:pb-4">
-        <div className="grid md:grid-cols-icon grid-rows-section justify-items-center gap-8 sm:h-screen">
+      <section className="max-w-5xl p-4 sm:min-h-screen pt-6 pb-16 sm:pt-4 sm:pb-4">
+        <div className="grid md:grid-cols-icon grid-rows-section justify-items-center gap-8 sm:min-h-screen">
           <img
             ref={ref0}
             src="/SSLogo.png"
