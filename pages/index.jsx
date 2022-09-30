@@ -37,7 +37,7 @@ export default function Home() {
         <div className="grid md:grid-cols-icon grid-rows-section justify-items-center gap-8 sm:min-h-screen">
           <img
             ref={ref0}
-            src="/SSLogo.png"
+            src="/SSLogo.svg"
             alt="icon"
             className={`h-[40vmin] w-[40vmin] self-end md:self-center md:justify-self-end  ${
               inView0 ? "animate-slidein" : ""
