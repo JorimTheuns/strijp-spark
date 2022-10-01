@@ -260,7 +260,7 @@ export default function Home() {
             dataTallyEmojiAnimation="heart-beat"
             classes="bg-white self-center md:col-span-2 w-48 m-auto"
           >
-            Meld je aan
+            Meld je binnen 30 seconden aan ⏳
           </Button>
         </div>
       </section>
