@@ -5,6 +5,10 @@ import languages from "../assets/languages.json"
 import { getSiblingValue } from "./_app"
 import { useRouter } from "next/router"
 
+import { DembraneSketch } from "@components/j5Sketch/DembraneSketch"
+
+import dynamic from "next/dynamic"
+
 import CenterHeader from "@components/Center-Header"
 import StripHeader from "@components/StripHeader"
 import Footer from "@components/Footer"
@@ -251,7 +255,18 @@ export default function Home() {
         <title>Strijp Spark</title>
       </Head>
       <HeaderMenu></HeaderMenu>
-      <main className="grid">
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: -1,
+        }}
+      >
+        <DembraneSketch pageWidth={1000} />
+      </div>
+      <main className="grid bg-[#ffffffde]">
         <section className="sm:min-h-screen pt-6 pb-16 sm:pt-4 sm:pb-4">
           <div className="grid p-4 max-w-5xl m-auto lg:grid-cols-2 grid-rows-section justify-items-center gap-8 sm:min-h-screen">
             <img
@@ -287,7 +302,7 @@ export default function Home() {
                 dataTallyOverlay="1"
                 dataTallyEmojiText="🤝"
                 dataTallyEmojiAnimation="heart-beat"
-                className=""
+                className="bg-white"
               >
                 {content.helpUs.text[locale]}
               </Button>
@@ -298,7 +313,7 @@ export default function Home() {
                 dataTallyOverlay="1"
                 dataTallyEmojiText="☕️"
                 dataTallyEmojiAnimation="heart-beat"
-                className=""
+                className="bg-white"
               >
                 {content.donate.text[locale]}
               </Button>
