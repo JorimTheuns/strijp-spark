@@ -60,7 +60,7 @@ export default function Home() {
       },
       form: {
         "nl-NL": "mD469R",
-        "en-UK": "Sign up now!",
+        "en-UK": "w5BN06",
       },
       title: {
         "nl-NL": "Jou!",
@@ -79,7 +79,7 @@ export default function Home() {
       },
       form: {
         "nl-NL": "3ja4DR",
-        "en-UK": "Sign up now!",
+        "en-UK": "nrjX8l",
       },
       title: {
         "nl-NL": "Vrijwilligers",
@@ -99,7 +99,7 @@ export default function Home() {
       },
       form: {
         "nl-NL": "wQKlq7",
-        "en-UK": "Sign up now!",
+        "en-UK": "mZjrAo",
       },
       title: {
         "nl-NL": "Donaties",
