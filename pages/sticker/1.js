@@ -41,11 +41,6 @@ export default function Sticker() {
               asPath={""}
             ></LanguageToggle>
           </div>
-          <div>
-            <h1 className="text-md">Selecteer Nederlands</h1>
-            <h1 className="text-xl">/</h1>
-            <h1 className="text-md">Please select English</h1>
-          </div>
         </div>
       </FullScreenUI>
     </div>
