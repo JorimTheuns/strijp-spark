@@ -28,7 +28,7 @@ import HeaderMenu from "@components/HeaderMenu"
 
 export default function Home() {
   const { locale, locales, asPath } = useRouter()
-  const options = { triggerOnce: true }
+  const options = { triggerOnce: true, skip: true }
   const [ref0, inView0] = useInView(options)
   const [ref1, inView1] = useInView(options)
   const [ref2, inView2] = useInView(options)
