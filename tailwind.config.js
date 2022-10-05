@@ -72,7 +72,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         // basic icon-text grid
-        icon: "minmax(auto, max-content) 2fr",
+        icon: "minmax(auto, max-content) 1fr",
 
         // Complex site-specific column configuration
         footer: "200px minmax(900px, 1fr) 100px",
