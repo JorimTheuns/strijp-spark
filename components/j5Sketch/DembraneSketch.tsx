@@ -364,7 +364,7 @@ export const DembraneSketch = ({ pageWidth }: { pageWidth: number }) => {
     showfood = false
     constGrowth = 8
     p5.background(255)
-    p5.frameRate(30)
+    p5.frameRate(24)
     //fullScreen();
     for (let i = 0; i < cellsWide; i++) {
       cells[i] = []
@@ -416,6 +416,8 @@ export const DembraneSketch = ({ pageWidth }: { pageWidth: number }) => {
     //console.log(i,j);
     oldMouseX = p5.mouseX
     oldMouseY = p5.mouseY
+    //p5.fill("#ffffffde")
+    //p5.rect(0, 0, p5.width, p5.height)
   }
 
   const windowResized = (p5: any) => {

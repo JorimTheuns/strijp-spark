@@ -261,17 +261,18 @@ export default function Home() {
           top: 0,
           left: "50%",
           transform: "translateX(-50%)",
-          zIndex: -1,
+          zIndex: -20,
         }}
       >
         <DembraneSketch pageWidth={1000} />
       </div>
-      <main className="grid bg-[#ffffffde]">
+      <div className="fixed w-screen h-screen top-0 left-0 bg-[#ffffffde] -z-10"></div>
+      <main className="grid ">
         <section className="sm:min-h-screen pt-6 pb-16 sm:pt-4 sm:pb-4">
           <div className="grid p-4 max-w-5xl m-auto lg:grid-cols-2 grid-rows-section justify-items-center gap-8 sm:min-h-screen">
             <img
               ref={ref0}
-              src="/SSLogo.svg"
+              src="/Spark logo.svg"
               alt="icon"
               className={`h-[40vmin] w-[40vmin] self-end lg:self-center lg:justify-self-end  ${
                 inView0 ? "animate-slidein" : ""
