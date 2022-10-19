@@ -222,8 +222,8 @@ export default function Home() {
           "en-UK": "When?",
         },
         subTitle: {
-          "nl-NL": "19:00 tot 21:00. 24 november 2022",
-          "en-UK": "19:00 to 21:00. 24th November 2022",
+          "nl-NL": "Een vroege weekendavond medio januari - Eve moet haar scriptie afmaken!",
+          "en-UK": "An early weekend evening in mid January - Eve has to finish her thesis!",
         },
       },
       where: {
