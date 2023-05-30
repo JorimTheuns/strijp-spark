@@ -172,9 +172,21 @@ export default function Home() {
       },
       subTitle: {
         "nl-NL":
-          "Hi! Wij zijn Jor en Eve, we wonen in Haasje Over, en we hebben allebei een passie voor participatie. Jor is ontwerper bij een start-up, en Eve doet haar afstudeer onderzoek over burger participatie aan de TU/e.",
+          "Hi! Wij zijn Jor en Eve, we wonen in Haasje Over, en we hebben allebei een passie voor participatie. Jor is ontwerper en programmeur en Eve doet haar afstudeer onderzoek over burger participatie aan de TU/e.",
         "en-UK":
-          "Hi! We are Jor and Eve, we live in Haasje Over (the orange building with the funny hat), and we both have a passion for participation. Jor is a designer at a start-up, and Eve is doing her graduation research on participation at TU/e.",
+          "Hi! We are Jor and Eve, we live in Haasje Over (the orange building with the funny hat), and we both have a passion for participation. Jor is a designer and a programmer, and Eve is doing her graduation research on participation at TU/e.",
+      },
+    },
+    pilot: {
+      title: {
+        "nl-NL": "De eerste pilot sessie is geslaagd!",
+        "en-UK": "The first pilot session? Great success!",
+      },
+      subTitle: {
+        "en-UK":
+          "To all the lovely people who attended the Peer Test, thank you so much for participating! It was an excellent opportunity to put some of our ideas into action. We have learned a lot about how we can host the big session to be even better.",
+        "nl-NL":
+          "Aan alle lieve mensen die de Peer Test hebben bijgewoond, hartelijk dank voor jullie deelname! Het was een uitstekende kans om onze ideeën in praktijk te brengen. We hebben veel geleerd over hoe we de grote sessie nog beter kunnen organiseren.",
       },
     },
     partners: {
@@ -222,8 +234,10 @@ export default function Home() {
           "en-UK": "When?",
         },
         subTitle: {
-          "nl-NL": "Een vroege weekendavond medio januari - Eve moet haar scriptie afmaken!",
-          "en-UK": "An early weekend evening in mid January - Eve has to finish her thesis!",
+          "nl-NL":
+            "Een vroege weekendavond in September - Weet je niet zeker of je erbij kan zijn? Laat ons weten!",
+          "en-UK":
+            "An early weekend evening in September. Want not sure you can make it? let us know!",
         },
       },
       where: {
@@ -266,7 +280,7 @@ export default function Home() {
       >
         <DembraneSketch pageWidth={1000} />
       </div>
-      <div className="fixed w-screen h-screen top-0 left-0 bg-[#ffffffde] -z-10"></div>
+      <div className="fixed w-screen h-screen top-0 left-0 bg-[#ffffffaa] -z-10"></div>
       <main className="grid ">
         <section className="sm:min-h-screen pt-6 pb-16 sm:pt-4 sm:pb-4">
           <div className="grid p-4 max-w-5xl m-auto lg:grid-cols-2 grid-rows-section justify-items-center gap-8 sm:min-h-screen">
@@ -322,10 +336,7 @@ export default function Home() {
             <ScrollDown></ScrollDown>
           </div>
         </section>
-        <section
-          id="Description"
-          className="border-t-8 border-day-gray pt-16 pb-16 sm:pt-4 sm:pb-4"
-        >
+        <section id="Description" className="pt-16 pb-16 sm:pt-4 sm:pb-4">
           <div className="max-w-5xl m-auto p-4 gap-8 grid lg:grid-cols-5 lg:auto-rows-min sm:min-h-screen content-center">
             <div
               ref={ref1}
@@ -360,7 +371,7 @@ export default function Home() {
             </div>
             <div
               ref={ref3}
-              className={`bg-white lg:col-span-3 lg:col-start-2 ${
+              className={`backdrop-blur lg:col-span-3 lg:col-start-2  ${
                 inView3 ? "animate-slidein" : ""
               }`}
             >
@@ -372,7 +383,7 @@ export default function Home() {
             </div>
             <div
               ref={ref4}
-              className={`bg-white lg:col-span-3 lg:col-start-3 ${
+              className={`backdrop-blur  lg:col-span-3 lg:col-start-3 ${
                 inView4 ? "animate-slidein" : ""
               }`}
             >
@@ -384,7 +395,36 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="border-t-8 border-day-gray pt-16 pb-16 sm:pt-4 sm:pb-4">
+        <section className="bg-day-teal pt-16 pb-16 sm:pt-4 sm:pb-4">
+          <div className="max-w-5xl m-auto p-4 gap-8 grid grid-cols-1  sm:min-h-[80vh] content-center">
+            <div className="grid gap-8 md:grid-cols-2 items-center align-middle text-center md:text-left">
+              <div className="relative">
+                <img
+                  className="border-4 border-blackish opacity-100 hover:opacity-0"
+                  src="/explanation.JPG"
+                ></img>
+                <img
+                  className="border-4 border-blackish absolute translate-y-[-100%] opacity-0 hover:opacity-100"
+                  src="/this_big.JPG"
+                ></img>
+              </div>
+              <div className="self-center space-y-4">
+                <h1 className="text-5xl font-bold">
+                  {content.pilot.title[locale]}
+                </h1>
+
+                <p className="text-2xl">{content.pilot.subTitle[locale]}</p>
+                <Button classes={`bg-day-green`}>
+                  <Link href="/peer-test" className="text-blackish">
+                    Lees het rapport (Engels)
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pt-16 pb-16 sm:pt-4 sm:pb-4">
           <div className="max-w-5xl m-auto p-4 gap-8 grid grid-cols-1 lg:auto-rows-min  sm:min-h-[80vh] content-center">
             <div className="grid gap-8 md:grid-cols-2 items-center text-center md:text-right">
               <h1 className="text-5xl font-bold self-end">
@@ -407,7 +447,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className=" border-t-8 border-day-gray pt-16 pb-16 sm:pt-4 sm:pb-4">
+        <section className="pt-16 pb-16 sm:pt-4 sm:pb-4">
           <div
             ref={ref5}
             id="Partners"
@@ -455,35 +495,38 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className=" border-day-gray bg-day-green pt-16 pb-16 sm:pt-4 sm:pb-4">
+        <section className=" bg-day-green pt-16 pb-16 sm:pt-4 sm:pb-4">
           <div className=" max-w-7xl m-auto p-4 gap-8 grid md:grid-cols-2 sm:min-h-[80vh] lg:auto-rows-min content-center">
             <h1 className="text-4xl self-end leading-tight text-center font-bold col-span-full">
               {content.quick.title[locale]}
             </h1>
-            <TextBox
-              icon="🧍"
-              title={content.quick.who.title[locale]}
-              subtitle={content.quick.who.subTitle[locale]}
-              classes=" bg-white"
-            ></TextBox>
-            <TextBox
-              icon="🤨"
-              title={content.quick.what.title[locale]}
-              subtitle={content.quick.what.subTitle[locale]}
-              classes=" bg-white"
-            ></TextBox>
-            <TextBox
-              icon="🗓"
-              title={content.quick.when.title[locale]}
-              subtitle={content.quick.when.subTitle[locale]}
-              classes=" bg-white"
-            ></TextBox>
-            <TextBox
-              icon="📍"
-              title={content.quick.where.title[locale]}
-              subtitle={content.quick.where.subTitle[locale]}
-              classes=" bg-white"
-            ></TextBox>
+            <div className="columns-1 md:columns-2 gap-4 col-span-full space-y-4">
+              <TextBox
+                icon="🧍"
+                title={content.quick.who.title[locale]}
+                subtitle={content.quick.who.subTitle[locale]}
+                classes=" bg-white"
+              ></TextBox>
+              <TextBox
+                icon="🤨"
+                title={content.quick.what.title[locale]}
+                subtitle={content.quick.what.subTitle[locale]}
+                classes=" bg-white"
+              ></TextBox>
+              <TextBox
+                icon="🗓"
+                title={content.quick.when.title[locale]}
+                subtitle={content.quick.when.subTitle[locale]}
+                classes=" bg-white"
+              ></TextBox>
+              <TextBox
+                icon="📍"
+                title={content.quick.where.title[locale]}
+                subtitle={content.quick.where.subTitle[locale]}
+                classes=" bg-white"
+              ></TextBox>
+            </div>
+
             <Button
               dataTallyOpen={content.signUp.form[locale]}
               dataTallyLayout="modal"
@@ -497,7 +540,7 @@ export default function Home() {
             </Button>
           </div>
         </section>
-        <section className=" border-day-gray pt-16 pb-16 sm:pt-4 sm:pb-4">
+        <section className=" pt-16 pb-16 sm:pt-4 sm:pb-4">
           <div className="max-w-7xl m-auto p-4 gap-8 grid auto-cols-auto lg:grid-cols-3 sm:min-h-[80vh] lg:auto-rows-min content-center">
             <h1 className="text-4xl self-end leading-tight text-center font-bold col-span-full">
               {content.lookingFor.title[locale]}
@@ -525,7 +568,7 @@ export default function Home() {
               dataTallyOverlay="1"
               dataTallyEmojiText="📝"
               dataTallyEmojiAnimation="heart-beat"
-              classes="bg-white self-start"
+              classes="backdrop-blur  self-start"
             >
               <TextBox
                 icon="🤝"
@@ -541,7 +584,7 @@ export default function Home() {
               dataTallyOverlay="1"
               dataTallyEmojiText="📝"
               dataTallyEmojiAnimation="heart-beat"
-              classes="bg-white self-start"
+              classes="backdrop-blur  self-start"
             >
               <TextBox
                 icon="🎁"

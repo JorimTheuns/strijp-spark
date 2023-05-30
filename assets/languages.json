@@ -2,13 +2,13 @@
   "languages": [
     {
       "locale": "en-UK",
-      "text": "English 🇬🇧",
-      "emoji": "🇬🇧"
+      "text": "English",
+      "emoji": "EN"
     },
     {
       "locale": "nl-NL",
-      "text": "Nederlands 🇳🇱",
-      "emoji": "🇳🇱"
+      "text": "Nederlands",
+      "emoji": "NL"
     }
   ]
 }

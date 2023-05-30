@@ -4,7 +4,7 @@ import MyLink from "./MyLink"
 
 export default function LanguageToggle({ locale, locales, asPath, click }) {
   return (
-    <div className="grid gap-2 justify-center">
+    <div className="grid gap-2 justify-center z-50">
       {locales.map((l, i) => {
         const lang = getSiblingValue("locale", l, "text", languages.languages)
         const href = asPath.toString() + click.toString()
@@ -20,7 +20,7 @@ export default function LanguageToggle({ locale, locales, asPath, click }) {
 
 export function LanguageToggleFlag({ locale, locales, asPath }) {
   return (
-    <div className="flex gap-2 flex-wrap">
+    <div className="flex gap-2 flex-wrap z-50 ">
       {locales.map((l, i) => {
         var flag = getSiblingValue("locale", l, "emoji", languages.languages)
         var current = false
