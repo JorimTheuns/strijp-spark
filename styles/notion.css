@@ -5,6 +5,32 @@
   caret-color: rgb(55, 53, 47);
 }
 
+main > p.notion-blue_background > a.notion-link {
+  border: 2px solid blue;
+  color: blue;
+  padding: 4px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 8px;
+  transform: scale(1);
+}
+main > p.notion-blue_background > a.notion-link:hover {
+  transform: scale(1.05);
+}
+
+p.notion-blue_background {
+  padding: 12px 0px;
+}
+
+main > p.notion-blue_background > a.notion-link:first-child {
+  color: white;
+  border: 2px solid;
+  padding: 4px 16px;
+  background: blue;
+  margin-left: 0px;
+}
+
 .notion > *,
 .notion-page > *,
 .notion-column > * {
@@ -56,7 +82,7 @@
   background-color: rgb(244, 223, 235);
 }
 .notion-blue_background {
-  background-color: rgb(221, 235, 241);
+  //background-color: rgb(221, 235, 241);
 }
 .notion-purple_background {
   background-color: rgb(234, 228, 242);
